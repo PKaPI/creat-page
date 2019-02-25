@@ -1,0 +1,36 @@
+.top-bar{
+  position: relative;
+  color:#fff;
+  .logo{
+    img{
+      width: 150px;
+      height: 60px;
+      float: left;
+      margin-left: 10px;
+      padding: 10px 10px;
+    }
+  }
+  .top-bar-nav{
+   color:#fff;
+   margin-left:60px;
+   .ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu{
+    border-bottom:2px solid #1A76D2;
+   }
+  .ant-menu-item-selected{
+        background-color: #2491f7;
+        border-bottom:2px solid #2491f7 !important;
+      }
+  li.ant-menu-item {
+      width: 120px;
+      text-align: center;
+      a{
+        color:#fff;
+      }
+    }
+  }
+}
+.ant-layout-header{
+ background:#1A76D2;
+ padding:0 20px;
+}
+

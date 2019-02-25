@@ -1,0 +1,221 @@
+{
+  "success": true,
+  "message": "执行成功~~",
+  "data":{
+    "topNav":[
+      {
+        "id": 3,
+        "parentId": 1,
+        "permissionName": "大盘",
+        "permissionIcon": "",
+        "permissionUrl": "/index",
+        "children": []
+      },
+      {
+        "id": 6,
+        "parentId": 2,
+        "permissionName": "常用零件",
+        "permissionIcon": "",
+        "permissionUrl": "/part/draggable",
+        "children": []
+      } ,
+      {
+        "id": 3,
+        "parentId": 1,
+        "permissionName": "常用区块",
+        "permissionIcon": "",
+        "permissionUrl": "/back/form",
+        "children": []
+      }
+    ],
+    "sideNav":[
+      {
+        "id": 8,
+        "parentId": 0,
+        "permissionName": "大盘",
+        "permissionIcon": "",
+        "permissionUrl": "/index",
+        "children": [
+         {
+          "id": 3,
+          "parentId": 1,
+          "permissionName": "分析页面",
+          "permissionIcon": "",
+          "permissionUrl": "/index/analysis",
+          "children": []
+         },
+         {
+          "id": 3,
+          "parentId": 1,
+          "permissionName": "表格搜索",
+          "permissionIcon": [],
+          "permissionUrl": "/index/role",
+          "children": []
+        },
+        {
+          "id": 5,
+          "parentId": 1,
+          "permissionName": "表格查询",
+          "permissionIcon": [],
+          "permissionUrl": "/index/searchTable",
+          "children": []
+        },
+        {
+          "id": 9,
+          "parentId": 1,
+          "permissionName": "标准列表",
+          "permissionIcon": [],
+          "permissionUrl": "/index/list",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "parentId": 0,
+      "permissionName": "常用零件",
+      "permissionIcon": "appstore",
+      "permissionUrl": "/part",
+      "children": [
+        {
+          "id": 6,
+          "parentId": 2,
+          "permissionName": "拖拽功能",
+          "permissionIcon": "",
+          "permissionUrl": "/part/draggable",
+          "children": []
+        },
+        {
+          "id": 7,
+          "parentId": 2,
+          "permissionName": "文本编辑器",
+          "permissionIcon": "",
+          "permissionUrl": "/part/textEditor",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "代码编辑器",
+          "permissionIcon": "",
+          "permissionUrl": "/part/code",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "websocket使用",
+          "permissionIcon": "",
+          "permissionUrl": "/part/websocket",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "上传下载",
+          "permissionIcon": "",
+          "permissionUrl": "/part/upload",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "地图功能",
+          "permissionIcon": "",
+          "permissionUrl": "/part/map",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "markdown使用",
+          "permissionIcon": "",
+          "permissionUrl": "/part/md",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "图片轮播",
+          "permissionIcon": "",
+          "permissionUrl": "/part/swiper",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "json-view",
+          "permissionIcon": "",
+          "permissionUrl": "/part/jsonview",
+          "children": []
+        },
+        {
+          "id": 25,
+          "parentId": 2,
+          "permissionName": "视频播放",
+          "permissionIcon": "",
+          "permissionUrl": "/part/video",
+          "children": []
+        }
+        ]
+      },
+      {
+        "id": 1,
+        "parentId": 0,
+        "permissionName": "常用区块",
+        "permissionIcon": "mail",
+        "permissionUrl": "/back",
+        "children": [
+          {
+            "id": 3,
+            "parentId": 1,
+            "permissionName": "表单",
+            "permissionIcon": "",
+            "permissionUrl": "/back/form",
+            "children": []
+          },
+          {
+            "id": 4,
+            "parentId": 1,
+            "permissionName": "表格常用",
+            "permissionIcon": [],
+            "permissionUrl": "/back/form_common",
+            "children": []
+          },
+          {
+            "id": 4,
+            "parentId": 1,
+            "permissionName": "表格搜索",
+            "permissionIcon": [],
+            "permissionUrl": "/back/form_search",
+            "children": []
+          },
+          {
+            "id": 5,
+            "parentId": 1,
+            "permissionName": "详情",
+            "permissionIcon": [],
+            "permissionUrl": "/back/detail",
+            "children": []
+          },
+          {
+            "id": 6,
+            "parentId": 1,
+            "permissionName": "结果-成功",
+            "permissionIcon": [],
+            "permissionUrl": "/back/result/success",
+            "children": []
+          },
+          {
+            "id": 7,
+            "parentId": 1,
+            "permissionName": "结果-失败",
+            "permissionIcon": [],
+            "permissionUrl": "/back/result/failure",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

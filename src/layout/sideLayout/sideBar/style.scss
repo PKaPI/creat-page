@@ -1,0 +1,31 @@
+.fold-btn{
+  text-align: center;
+  background:#eee;
+  .trigger{
+    font-size: 16px;
+    padding: 2px 10px;
+    color:#94A8C6;
+    cursor: pointer;
+  }
+}
+.side-menu{
+  position: relative;
+  a{
+   padding:12px 60px 12px 0px;
+   color:#333;
+  }
+  .ant-menu-item-selected{
+    a{
+      color: #1890ff;
+    }
+  }
+}
+.side-nav{
+  box-shadow: 2px 0 6px rgba(0,21,41,.1);
+  z-index: 10;
+  .ant-menu-inline{
+    border-right:none;
+  }
+}
+
+
