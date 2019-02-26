@@ -1,0 +1,97 @@
+.draggItem{
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(233,233,233,1);
+    cursor: move;
+    position:relative;
+    transition: all 0.1s ease-in;
+    overflow:hidden;
+    &.over{
+        // box-shadow: red 1px 0px 1px 1px;
+        z-index:10;
+    }
+    &:hover{
+        box-shadow: 0 0 2px 1px #3080fe;
+        z-index:10;
+        // box-shadow:0px 2px 8px 0px rgba(0,0,0,0.09);
+        .preview-operation{
+            top: 10px;
+        }
+    }
+    .preview-operation{
+        -webkit-transition: all .1s ease-in;
+        transition: all .1s ease-in;
+        position: absolute;
+        right: 10px;
+        top: -36px;
+        height: 24px;
+        background-color: rgba(255,255,255,.5);
+        border-radius: 3px;
+        z-index: 2;
+        .delete_btn{
+            cursor:pointer;
+            font-size:20px;
+            color:#666;
+        }
+    }
+    .drag_content{
+        height: 136px;
+        padding: 24px;
+        display: flex;
+        .img_wrap{
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-right: 16px;
+            img{
+                display: block;
+                width: 48px;
+                height: 48px;
+            }
+        }
+        .title{
+            height:24px;
+            font-size:16px;
+            color:rgba(0,0,0,0.85);
+            line-height:24px;
+            margin-bottom: 12px;
+        }
+        .text{
+            font-size:14px;
+            color:rgba(0,0,0,0.45);
+            line-height:22px;
+        }
+    }
+    &.drop-over-downward{
+            margin-bottom: 10px;
+            border-bottom: 2px dashed #1890ff;
+            
+    }
+    &.drop-over-upward{
+                margin-top: 10px;
+                border-top: 2px dashed #1890ff;
+    }
+    .drag_footer{
+        height:48px;
+        background:rgba(247,249,250,1);
+        border-radius:0px 0px 2px 2px;
+        border-top:1px solid rgba(233,233,233,1);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        .btn{
+            flex:1;
+            text-align: center;
+            height:22px;
+            font-size:14px;
+            color:rgba(0,0,0,0.45);
+            &:hover{
+                color: #108EE9;
+            }
+        }
+    }
+}
+@media screen and (min-width: 1440px) {
+    .draggItem:nth-child(3n){
+        margin-right: 0;
+    }
+}

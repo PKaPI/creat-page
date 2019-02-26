@@ -1,0 +1,27 @@
+.create_page{
+  font-size:26px;
+  padding: 20px;
+  .section_wrap{
+    display:flex;
+    .block_section{
+      flex:6;
+      padding:20px 20px;   
+    }
+    .page_section{
+      padding:20px 20px;
+      border:2px solid #eee;
+      flex:4;
+    }
+  }
+  .create_ctrol_footer{
+    flex: 0 0 50px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #f3f3f3;
+    .col_btn{
+      margin:0 10px;
+    }
+  }
+}

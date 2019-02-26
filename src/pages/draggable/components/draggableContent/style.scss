@@ -1,0 +1,20 @@
+.add_section{
+    width:362px;
+    float: left;
+    height:184px;
+    line-height: 184px;
+    text-align: center;
+    background:rgba(255,255,255,1);
+    border-radius:2px;
+    border:2px dotted rgba(217,217,217,1);
+    cursor: pointer;
+    &:hover{
+        box-shadow:none;
+    }
+    .text{
+        height:24px;
+        font-size:16px;
+        cursor: pointer;
+        color:rgba(0,0,0,0.45);
+    }
+}
