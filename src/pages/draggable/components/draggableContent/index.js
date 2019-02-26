@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { DragDropContext, DragSource, DropTarget } from 'react-dnd';
-import { Icon,Input } from 'antd';
+import { Icon,Input,Popover } from 'antd';
 import PropTypes from 'prop-types';
 import HTML5Backend from 'react-dnd-html5-backend';
 import ItemTypes from '../ItemTypes';
 const update = require('immutability-helper');
 import DraggItem from '../draggItem';
-import AddApp from '../addApp';
+import classnames from 'classnames';
 import './style.scss';
 
 const cardTarget = {
@@ -22,7 +22,6 @@ class DraggableConTent extends Component {
     constructor(props) {
         super(props);
         this.state={
-            addVisible:false,
             cards : [
                 {   
                     id:1,
@@ -59,7 +58,6 @@ class DraggableConTent extends Component {
 
     }
     moveCard = (id, atIndex) => {
-        console.log(atIndex);
 		const { card, index } = this.findCard(id)
 		this.setState(
 			update(this.state, {
@@ -79,30 +77,31 @@ class DraggableConTent extends Component {
 			index: cards.indexOf(card),
 		}
     }
-    onAddApp = () => {
-        this.setState({
-            addVisible:true,
-        }) 
-    }
-    onAddAppOk = () => {
-        this.setState({
-            addVisible:false,
-        })
-    }
-    onCancelApp = () => {
-        this.setState({
-            addVisible:false,
-        })
-    }
     render() {
-        const { connectDropTarget } = this.props;
-        const {cards,addVisible}=this.state;
+        const { connectDropTarget,className,blockList,onDelete } = this.props;
+        const {cards}=this.state;
+        console.log(blockList)
         return (
-            <div className="draggableContent">
-            <div>已选区块<span>（10）</span></div>
+            <div className={classnames('draggableContent',className)}>
+            <div className="cont_title">
+                <div className="text_left">
+                    布局选择
+                    <Popover content="MainLayout布局" title="自定义布局" trigger="hover">
+                        <span className="layout_item"><Icon type="layout" /></span>
+                    </Popover>
+                    <Popover content="SideLayout布局" title="自定义布局" trigger="hover">
+                        <span className="layout_item"><Icon type="layout" /></span>
+                    </Popover>
+                    <Popover content="TopLayout布局" title="自定义布局" trigger="hover">
+                        <span className="layout_item"><Icon type="layout" /></span>
+                    </Popover>
+                    
+                </div>
+                <div className="text_right">已选区块<span>（{blockList.length}）</span></div>
+            </div>
             {
                 connectDropTarget &&
-                    connectDropTarget(<div>
+                    connectDropTarget(<div className="drag_content">
                     {
                         cards.map((item,index)=>(
                             <DraggItem 
@@ -119,14 +118,15 @@ class DraggableConTent extends Component {
                     }
                      </div>)
             }
-            <AddApp visible={addVisible} onOk={this.onAddAppOk} onCancel={this.onCancelApp}/>
             </div>
         )
     }
 }
 
 DraggableConTent.propTypes = {
-
+    className:''
 }
-
+DraggableConTent.defaultProps={
+    className:PropTypes.string,
+}
 export default DraggableConTent

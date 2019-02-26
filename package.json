@@ -37,7 +37,9 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
+    "react-sticky": "^6.0.3",
     "react-transition-group": "^2.2.1",
+    "react-viewer": "^2.8.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "roo-tool": "^1.0.2"

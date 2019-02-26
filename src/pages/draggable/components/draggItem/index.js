@@ -99,10 +99,6 @@ class DraggItem extends Component {
                     <div className="preview-operation">
                         <Icon type="delete" className="delete_btn" />
                     </div>
-                    <div className="drag_footer">
-                        <span className="btn">修改应用</span>
-                        <span className="btn">删除应用</span>
-                    </div>
                 </div>),
                 )
             }
