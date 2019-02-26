@@ -70,14 +70,13 @@ class DraggItem extends Component {
     }
     render() {
         const {
-            icon,
-            title,
-            content,
             isDragging,
             isOver,
 			connectDragSource,
             connectDropTarget,
             index,
+            dataItem,
+            onDelete,
         }=this.props;
         return (<div className={classnames({
             draggItem:true,
@@ -90,14 +89,10 @@ class DraggItem extends Component {
                 connectDragSource(
                     connectDropTarget(<div>
                     <div className="drag_content">
-                        <div className="img_wrap"><img src={icon}/></div>
-                        <div>
-                            <div className="title">{title}</div>
-                            <div className="text">{content}</div>
-                        </div>
+                        <img src={dataItem.screenshot}/>
                     </div>
                     <div className="preview-operation">
-                        <Icon type="delete" className="delete_btn" />
+                        <Icon type="delete" className="delete_btn" onClick={()=>onDelete(dataItem)}/>
                     </div>
                 </div>),
                 )
@@ -107,14 +102,12 @@ class DraggItem extends Component {
     }
 }
 DraggItem.defaultProps= {
-    icon : '/imgs/zhibiao_48.png',
-    title:'应用名称',
-    content:'应用描述'
+    dataItem : {
+        screenshot:''
+    },
 }
 DraggItem.propTypes = {
-    icon:PropTypes.string,
-    title:PropTypes.string,
-    content:PropTypes.string,
+    dataItem:PropTypes.objectOf(PropTypes.any),
 }
 
 export default DraggItem

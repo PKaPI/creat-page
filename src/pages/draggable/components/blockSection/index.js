@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { message as Message, Icon, Tabs, Input, Button, Drawer, Spin, Tooltip,Progress } from "antd";
+import { message as Message,Empty, Icon, Tabs, Input, Drawer, Spin, Tooltip } from "antd";
 import Viewer from 'react-viewer';
 import 'react-viewer/dist/index.css';
 import classNames from 'classnames';
@@ -33,8 +33,6 @@ export default class BlockSection extends Component {
   onChangeActiveKey = (activeKey) => {
     this.setState({
       activeKey,
-    },()=>{
-      this.getBlocksData()
     })
   }
   getBlocksData = () => {
@@ -113,13 +111,16 @@ export default class BlockSection extends Component {
     })
   }
   onSelectBlock = (item) => {
-      this.props.onChangeBlock(item);
+      this.props.onSelectBlock(item);
   }
   onChangeBlock = (e) => {
     const value = e.target.value;
     this.setState({
         searchKey:value
     })
+  }
+  openUrl = (url) => {
+      window.open(url,'_blank')
   }
   renderContent = () => {
     let { sorterList, filterKey,searchKey} = this.state;
@@ -148,7 +149,7 @@ export default class BlockSection extends Component {
                       </li>
                       <li>
                         <Tooltip placement="topLeft" title="访问仓库">
-                          <a onClick={()=>{openUrl(item.repository)}}><Icon type="github" /></a>
+                          <a onClick={()=>{this.openUrl(item.repository)}}><Icon type="github" /></a>
                         </Tooltip>
                       </li>
                     </ul>
@@ -186,16 +187,13 @@ export default class BlockSection extends Component {
             </TabPane>
             <TabPane tab="Vue" key="vue">
                 <Spin tip="Loading..." spinning={loading}>
-                    {
-                        this.renderContent('vue')
-                    }
+                    <Empty description="暂无数据"/>
                 </Spin>
             </TabPane>
             <TabPane tab="Angular" key="angular">
                 <Spin tip="Loading..." spinning={loading}>
-                    {
-                        this.renderContent('angular')
-                    }
+                    暂无数据
+                    <Empty description="暂无数据"/>                                           
                 </Spin>
             </TabPane>
           </Tabs>

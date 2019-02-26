@@ -206,7 +206,7 @@
     }
     .ant-tabs-content{
         max-height:800px;
-        min-height: 400px;
+        min-height: 800px;
         position: relative;
         overflow-y: scroll;
     }
@@ -240,14 +240,14 @@
     &:hover{
         color: #f1e6e6;
         background-color: #6d8590;
-        border-left: 2px solid #078c1e;
+        border-left: 2px solid #3080fe;
     }
 }
 .ant-drawer-content{
     background-color: #020913;
 }
 .ant-drawer-header{
-    background-color:#18501f;
+    background-color:#3080fe;
     .ant-drawer-title{
         color: #fff;
     }

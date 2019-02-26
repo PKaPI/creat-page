@@ -27,11 +27,16 @@ export default class Draggable extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     return this.props != nextProps || this.state != nextState;
   }
-  onChangeBlock = (blockItem) => {
+  onSelectBlock = (blockItem) => {
     const {blockList} = this.state;
     this.setState({
       blockList:_.uniqBy([...blockList,blockItem],'name')
     });
+  }
+  onChangeBlock = (blockList) => {
+    this.setState({
+      blockList
+    })
   }
   onDelete = (ele) => {
     const {blockList} = this.state;
@@ -44,8 +49,8 @@ export default class Draggable extends Component {
     return (  
       <div className="create_page">
         <div className="section_wrap">
-          <DraggableContent className="page_section" blockList={blockList} onDelete={this.onDelete}/>
-          <BlockSection className="block_section" onChangeBlock={this.onChangeBlock}/>
+          <DraggableContent className="page_section" onChangeBlock={this.onChangeBlock} blockList={blockList} onDelete={this.onDelete}/>
+          <BlockSection className="block_section" onSelectBlock={this.onSelectBlock}/>
         </div>
         <div className="create_ctrol_footer">
               <Button icon="close" className="col_btn">取消</Button>
