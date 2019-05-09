@@ -22,7 +22,8 @@ class DraggableConTent extends PureComponent {
     constructor(props) {
         super(props);
         this.state={
-            cards : []
+            cards : [],
+            layout:'MainLayout'
         }
 
     }
@@ -54,22 +55,33 @@ class DraggableConTent extends PureComponent {
 			index: cards.indexOf(card),
 		}
     }
+    onChangeLayout = (key) => {
+        this.setState({
+            layout:key
+        })
+    }
     render() {
         const { connectDropTarget,className,onDelete } = this.props;
-        const {cards}=this.state;
+        const {cards,layout}=this.state;
         return (
             <div className={classnames('draggableContent',className)}>
             <div className="cont_title">
                 <div className="text_left">
                     布局选择
                     <Popover content="MainLayout布局" placement="bottomLeft" title="自定义布局" trigger="hover">
-                        <span className="layout_item"><Icon type="layout" /></span>
+                        <span className={classnames('layout_item',{
+                            active:layout == 'MainLayout'
+                        })} onClick={ () => this.onChangeLayout('MainLayout')}><Icon type="layout" theme="twoTone" /></span>
                     </Popover>
                     <Popover content="SideLayout布局" placement="bottomLeft" title="自定义布局" trigger="hover">
-                        <span className="layout_item"><Icon type="layout" /></span>
+                        <span className={classnames('layout_item',{
+                            active:layout == 'SideLayout'
+                        })} onClick={ () => this.onChangeLayout('SideLayout')}><Icon type="layout" theme="twoTone" /></span>
                     </Popover>
                     <Popover content="TopLayout布局" placement="bottomLeft" title="自定义布局" trigger="hover">
-                        <span className="layout_item"><Icon type="credit-card" /></span>
+                        <span className={classnames('layout_item',{
+                            active:layout == 'TopLayout'
+                        })}  onClick={ () => this.onChangeLayout('TopLayout')}><Icon type="credit-card" theme="twoTone" /></span>
                     </Popover>
                     
                 </div>

@@ -216,10 +216,10 @@
     }
     .pageControl{
         position: fixed;
-        top: 50%;
-        right: 10px;
+        top: 35%;
+        right: 0;
         .filter_menu{
-            font-size: 28px;
+            font-size: 24px;
             padding: 6px;
             cursor: pointer;
         }
@@ -247,9 +247,9 @@
     background-color: #020913;
 }
 .ant-drawer-header{
-    background-color:#3080fe;
+    background-color:#ffffff;
     .ant-drawer-title{
-        color: #fff;
+        color: #333;
     }
     
 }

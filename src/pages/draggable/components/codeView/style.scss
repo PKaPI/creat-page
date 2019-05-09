@@ -1,0 +1,22 @@
+.codeview{
+    @import '~codemirror/lib/codemirror.css';
+    @import '~codemirror/theme/material.css';
+    .ant-modal-body{
+        padding: 0;
+    }
+    .ant-modal-header{
+        padding: 4px;
+        .ant-modal-title{
+            font-size: 14px;
+            font-weight: 400px;
+        }
+    }
+    .ant-modal-close-x{
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    .CodeMirror{
+        height: 540px;
+    }
+}
